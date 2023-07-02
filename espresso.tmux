@@ -31,7 +31,7 @@ main() {
     theme="$(get_tmux_option "@espresso_variant" "main")"
 
     if [[ $theme == main ]]; then
-        background=$black 
+        background=$dark_grey
         status_color=$blue
 
         window_status_color=$magenta
@@ -39,10 +39,10 @@ main() {
 
     elif [[ $theme == blue ]]; then
         background=$blue
-        status_color=$black
+        status_color=$white
 
-        window_status_color=$black
-        window_status_active_color=$cyan
+        window_status_color=$cyan
+        window_status_active_color=$dark_grey
     fi
     
     message_background_color=$yellow
@@ -81,7 +81,6 @@ main() {
     setw "window-status-style" "fg=$window_status_color,bg=$background"
     setw "window-status-current-style" "fg=$window_status_active_color,bg=$background"
     setw "window-status-activity-style" "fg=$background,bg=$window_status_color"
-
 
     # Pane
     set "pane-border-style" "fg=$inactive_tab_foreground,bg=$inactive_tab_background"
